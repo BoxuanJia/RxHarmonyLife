@@ -4,11 +4,16 @@ import io.reactivex.*;
 import io.reactivex.parallel.ParallelFlowable;
 import ohos.aafwk.ability.ILifecycle;
 import ohos.aafwk.ability.Lifecycle.Event;
+import ohos.agp.components.Component;
 
 public final class RxLife {
 
     public static <T> RxConverter<T> as(ILifecycle owner) {
         return as(owner, Event.ON_STOP, false);
+    }
+
+    public static <T> RxConverter<T> as(Component view) {
+        return as(ViewScope.from(view), false);
     }
 
     private static <T> RxConverter<T> as(ILifecycle owner, Event event, boolean onMain) {
