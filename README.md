@@ -8,7 +8,7 @@
 ### Setup
 Download
 ```groovy
-implementation 'com.github.boxuanjia:rxharmonylife:1.0.0'
+implementation 'com.github.boxuanjia:rxharmonylife:1.0.2'
 ```
 
 And use
