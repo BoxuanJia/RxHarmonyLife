@@ -21,11 +21,7 @@ public final class ViewScope implements Scope, Component.BindStateChangedListene
     public void onScopeStart(Disposable d) {
         disposable = d;
         final Component view = this.view;
-        if (view == null)
-            throw new NullPointerException("view is null");
-        boolean isAttached = view.isBoundToWindow();
-        if (!isAttached)
-            throw new OutsideScopeException("View is not attached!");
+        if (view == null) return;
         view.setBindStateChangedListener(this);
     }
 
